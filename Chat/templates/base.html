@@ -1,0 +1,41 @@
+{% load static %}
+
+<head>
+    <title>{% block title %}Chat{% endblock title %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between" style="z-index: 100000;">
+        <div class="container-fluid d-flex">
+            <div class="navbar-nav">
+                {% if is_home %}
+                <a class="nav-link active" href="/">Home</a>
+                {% else %}
+                <a class="nav-link" href="/">Home</a>
+                {% endif %}
+                {% if is_chat %}
+                <a class="nav-link active" href="/">Chat</a>
+                {% else %}
+                <a class="nav-link" href="/">Chat</a>
+                {% endif %}
+            </div>
+            <h5 class="d-block card-title text-center text-light fw-light fs-2 position-absolute start-50 top-50 translate-middle">MyChat</h5>
+            <div class="">
+                {% if is_auth %}
+                {% else %}
+                <a class="btn btn-outline-light" href="/login">Log in</a>
+                <a class="btn btn-outline-light" href="/signup">Sign in</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
