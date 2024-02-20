@@ -6,8 +6,5 @@ def base(request):
     return render(request, 'chat.html', context={'is_auth': is_auth,
                                                  'dialogs': dialogs})
 
-def login(request):
-    return render(request, 'login.html')
-
 def signup(request):
     return render(request, 'signup.html')
