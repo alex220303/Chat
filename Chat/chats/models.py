@@ -14,3 +14,4 @@ class Message(models.Model):
     user =          models.ForeignKey(User, on_delete = models.SET_NULL, null=True)
     content =       models.CharField(max_length=1000, null=True)
     date =          models.DateTimeField()
+    viewed =        models.ManyToManyField(User, related_name='viewed_messages', blank=True)

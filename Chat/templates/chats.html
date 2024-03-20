@@ -11,8 +11,10 @@
                     <div class="fw-bold">{{ chat.name }}</div>
                     {{ chat.message_set.last.content }}
                 </div>
-                {% if chat.message_set.all|length > 0 %}
-                <span class="badge bg-primary rounded-pill">{{ chat.message_set.all|length }}</span>
+                {% load chat_tags %}
+                {% unread_messages_count chat.id as unread_count %}
+                {% if unread_count > 0 %}
+                <span class="badge bg-primary rounded-pill">{{ unread_count }}</span>
                 {% endif %}
             </li>
             {% endfor %}

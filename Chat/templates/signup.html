@@ -7,7 +7,8 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="border-0">
                     <div class="p-4 p-sm-5">
-                        <form>
+                        {% csrf_token %}
+                        <form method="post">
                             <div class="form-floating mt-5 mb-3">
                                 <input type="login" class="form-control" id="floatingLogin"
                                     placeholder="Login">
@@ -26,7 +27,7 @@
                             <div class="form-floating mb-5">
                                 <input type="password" class="form-control" id="floatingConfirmPassword"
                                     placeholder="ConfirmPassword">
-                                <label for="floatingConfirmPassword">Confirm assword</label>
+                                <label for="floatingConfirmPassword">Confirm password</label>
                             </div>
                             <div class="d-grid">
                                 <button class="btn btn-outline-light text-uppercase fw-bold " type="submit">Sign
